@@ -13,8 +13,6 @@ object luisa {
 
 
 
-
-
 object floki {
 	var arma 
 	
@@ -94,8 +92,9 @@ object castillo{
 	}
 	
 	
+	
 	method recibirAtaque(potencia){
-		defensa -= potencia
+		defensa = 0.max(defensa - potencia)
 	}
 	
 	method recibirTrabajo(){
