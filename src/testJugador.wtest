@@ -5,10 +5,12 @@ import armas.*
 
 
 test "primerTest" {
-
+    
 	luisa.personajeActivo(mario)
 	luisa.aparece(aurora)
 	luisa.aparece(castillo)
+	
+	
 	assert.equals(170,castillo.defensa())
 	assert.equals(45,mario.valorRecolectado())
 	assert.that(mario.esFeliz())
@@ -16,7 +18,7 @@ test "primerTest" {
 }
 
 test "segundoTest" {
-
+    
 	luisa.personajeActivo(mario)
 	floki.arma(jabalina)
 	luisa.aparece(tipa)
@@ -25,8 +27,30 @@ test "segundoTest" {
 	luisa.aparece(castillo)
 	
 	
-	assert.equals(170,castillo.defensa())
-	assert.equals(45,mario.valorRecolectado())
-	assert.that(mario.esFeliz())
+	assert.equals(16,mario.valorRecolectado())
+	assert.equals(9,tipa.altura())
+	assert.that(!mario.esFeliz())
+	assert.that(!aurora.viva())
+	assert.equals(150,castillo.defensa())
+	assert.that(!jabalina.estaCargada())
 
 }
+
+test "tercerTest"{
+	floki.arma(ballesta)
+	luisa.personajeActivo(floki)
+	luisa.aparece(aurora)
+	luisa.aparece(castillo)
+	
+	
+	assert.equals(0,mario.valorRecolectado())
+	assert.that(aurora.viva())
+	assert.equals(146,castillo.defensa())
+	
+	assert.that(floki.arma().estaCargada())
+	assert.equals(8, floki.arma().cargasRestantes())
+	
+	
+}
+
+

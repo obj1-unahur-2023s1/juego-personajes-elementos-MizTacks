@@ -7,6 +7,8 @@ object ballesta{
 	method estaCargada() = carga>0
 		
 	method registrarUso() {	carga -- }
+	
+	method cargasRestantes() = carga
 
 	
 }

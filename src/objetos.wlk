@@ -30,6 +30,7 @@ object aurora{
 	
 	method valor()= 15
 	
+	method viva() = viva
 	
 	method recibirTrabajo() {}
 	
